@@ -2,7 +2,7 @@
 
 ## Bienvenue sur le projet O'Coffee
 
-Nous sommes dans la 16ème semaine de formation chez O'Cloc et ce projet a été réalisé la 9ème semaine, après 2 mois d'apprentissage. Il résume les connaissances acquises jusqu'alors. Réalisé en HTML, CSS, JS, Node.js, SQL, il est responsive et respecte l'architeture MVC:
+Nous sommes dans la 16ème semaine de formation chez O'Clock et ce projet a été réalisé la 9ème semaine, après 2 mois d'apprentissage. Il résume les connaissances acquises jusqu'alors. Réalisé en HTML, CSS, JS, Node.js, SQL, il est responsive et respecte l'architeture MVC:
 
 - Un data mapper gère l'interaction avec la base de données,
 - Les vues sont produites avec le moteur de template EJS qui permet d'incorporer du JS dans les fichiers HTML pour rendre les données dynamiquement.
@@ -16,8 +16,7 @@ J'ai continué ce projet quelques jours après, mais de manière à ne pas prend
 
 - créer le .env
 - npm install
-- initialiser BDD, 'npm run initBDD' mot de passe ocoffee
-- 'npm run dev create' mot de passe ocoffee
+- initialiser la bdd 'npm run dev create' mot de passe: ocoffee
 - démarrer serveur: npm run dev
 - visionner sur port 3000
 
