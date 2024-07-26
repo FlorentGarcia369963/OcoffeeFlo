@@ -1,0 +1,3 @@
+catalogue lien add to bookmark footer article
+
+                             <a class="card-article-like" href="/addToBookmark/<%=coffee.id%>"></a> 

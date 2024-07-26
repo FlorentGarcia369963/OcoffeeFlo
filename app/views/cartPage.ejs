@@ -1,0 +1,93 @@
+<%- include('partials/header') %>
+
+    <section class=" section-catalogue">
+
+        <div class="section-banner-image">
+
+            <h2 class="section-catalogue-title">Votre Panier</h2>
+
+        </div>
+
+    </section>
+
+    <section class="main-section section-news">
+
+
+        <!-- <h2 class="section-news-title main-section-title">Nos cafés</h2> -->
+
+
+
+        <div class="section-news-cards">
+            <div class="shadow-blur--catalogue"></div>
+            <div class="cart-container">
+
+                <% console.log(coffees);
+                    if(coffees===null || coffees===undefined || coffees.length===0){%>
+                    <p>Il n'y a rien dans votre panier pour l'instant</p>
+                    <% }else{%>
+
+                        <table class="cart-table">
+                            <thead class="cart-table-head cart-table-part">
+                                <tr class="cart-table-head-line cart-table-line">
+                                    <th class="cart-table-head-cell">Nom</th>
+                                    <th class="cart-table-head-cell description-cell">Description</th>
+                                    <th class="cart-table-head-cell">Quantité</th>
+                                    <th class="cart-table-head-cell">Prix par produit (€)</th>
+                                    <td class="cart-table-head-cell">prix selon quantité (€)</td>
+
+                                    <th class="cart-table-head-cell remove-cell">Retirer le produit</th>
+                                    <th class="cart-table-head-cell remove-cell-small-device">retirer</th>
+                                </tr>
+                            </thead>
+                            <tbody  class="cart-table-body cart-table-part">
+
+                                <% let priceIdNumber =0 
+                                coffees.forEach((coffee)=> {
+                                    ++priceIdNumber %>
+
+                                <tr class="cart-table-body-line cart-table-line">
+                                    <td class="cart-table-body-cell name-cell"><a class="card-article-link--cart" href="/pageProduit/<%= coffee.item_id %>"><%= coffee.name %></a></td>
+                                    <td class="cart-table-body-cell description-cell"><%= coffee.description %></td>
+                                    <td class="cart-table-body-cell quantity-cell">
+                                        <div class="quantity-container">
+                                            <div class="quantity-button decrementButton">-</div>
+                                            <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="50">
+                                            <div class="quantity-button incrementButton">+</div>
+                                        </div>
+                                        </td>
+                                    <td class="cart-table-body-cell price-cell-<%=priceIdNumber%>"><%= coffee.price_per_kg %></td>
+                                    <td class="cart-table-body-cell total-line-cell-<%=priceIdNumber%>"></td>
+                                    <td class="cart-table-body-cell remove-cell"> <a  href="/removeFromCart/<%=coffee.id%>">Retirer</a></td>
+                                    <td class="cart-table-body-cell remove-cell-small-device"> <a href="/removeFromCart/<%=coffee.id%>">-</a></td>
+
+                                </tr>
+                                
+
+
+                                <%})}; %>
+                                <%console.log(coffees);
+                                if(coffees.length !== 0){console.log(coffees); %>
+                                <tr class="cart-table-total-line">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="description-cell"></td>
+                                    <td class="cart-table-total-cell">Total:</td>
+                                    <td class="cart-total-price"></td>
+                                    </tr>
+                                    <%}%>
+                            </tbody>
+
+                        </table>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <%- include('partials/footer') %>

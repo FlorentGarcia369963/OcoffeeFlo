@@ -1,0 +1,80 @@
+<%- include('partials/header') %>
+
+    <section class=" section-catalogue">
+
+        <div class="section-banner-image">
+
+            <h2 class="section-catalogue-title">Le Café <%= coffee.name %>
+            </h2>
+
+        </div>
+
+    </section>
+
+    <section class="main-section section-news">
+
+        <h2 class="section-news-title main-section-title">Le <%= coffee.name %>
+        </h2>
+
+
+
+        <div class="section-news-cards--detail">
+            <div class="shadow-blur--detail"></div>
+            <p class="detail-paragraph detail-date">Publié le: <%= coffeeDate %>
+            </p>
+
+            <div class="detail-image-container">
+                <img class="detail-image" src="/images/coffees/images_coffees/<%=coffee.name%>.jpg" alt="Image de grains de café">
+            </div>
+
+            <p class="detail-paragraph detail-description">
+                <%= coffee.description %>
+            </p>
+
+            <p class="detail-paragraph detail-origin">Origine : <%= coffee.origin_name %>
+            </p>
+            <p class="detail-paragraph detail-category">Caractéristique principale : <%= coffee.category_name %>
+            </p>
+            <p class="detail-paragraph detail-price">Prix: <%= coffee.price_per_kg %>€</p>
+            <p class="detail-paragraph detail-reference">Référence : <%= coffee.reference %>
+            </p>
+            <p class="detail-paragraph detail-availability">Disponible: <% if(coffee.available === true){ %>Oui<%} else { %>Non<%}%>
+            </p>
+
+            <!-- <article class="card-article card-detail">
+
+            <header class="card-article-header card-article-part">
+                <p class="card-article-date"> publié le <%= coffee.date_creation %></p>
+                <h3 class="card-article-title--detail"><%= coffee.name %></h3>
+            </header>
+
+            <main class="card-article-main card-article-part">
+                <div class="article-image-container">
+                    <img class="card-article-main-image" src="/images/coffees/<%= coffee.image_name %>" alt="Image de grains de café">
+                </div>
+                <p class="card-article-text-description card-article-text">
+                    <%= coffee.description %>                </p>
+                <p class="card-article-text-origin card-article-text">Origine : <%= coffee.origin_name %></p>
+                <p class="card-article-text-caracteristic card-article-text">Caractéristique principale : <%= coffee.category_name %>
+                </p>
+                <p class="card-article-text-price card-article-text">Prix: <%= coffee.price_per_kg %>€</p>
+                <p class="card-article-text-reference card-article-text">Référence : <%= coffee.reference %></p>
+                <p class="card-article-text-availability card-article-text">Disponible: <%= coffee.available %></p>
+
+
+            </main>
+
+            <footer class="card-article-footer card-article-part">
+                <a class="card-article-link" href="/catalogue">Retour au catalogue</a>
+            </footer>
+
+        </article> -->
+
+
+        </div>
+
+
+    </section>
+
+
+    <%- include('partials/footer') %>

@@ -1,0 +1,66 @@
+<%- include('partials/header') %>
+
+<section class=" section-catalogue">
+
+    <div class="section-banner-image">
+
+        <h2 class="section-catalogue-title">Créer un compte ou se connecter</h2>
+
+    </div>
+
+</section >
+
+<section class="main-section section-news section-shop">
+    
+    <h3 class="section-title-shop">Créer un compte</h3>
+    
+    <form action="/inscription" method="POST">
+    
+    <label for="firstname">Votre prénom est: </label>
+    <input type="text" name="firstname" id="firstname" value="Alain">
+    
+    <label for="lastname">Votre nom est: </label>
+    <input type="text" name="lastname" id="lastname" value="Proviste">
+    
+    <label for="email-inscription" >Votre email est:</label>
+    <input type="email" name="email" id="email-inscription" value="alain-proviste@hotmail.fr" required/>
+    
+    <label for="password">choisissez un mot de passe</label>
+    <input type="password" name="password" id="password" value="pass">
+    
+    <input type="submit" value="S'incrire" >
+    </form>
+    
+</section>
+
+<section class="main-section section-news section-shop">
+    
+    <h3 class="section-title-shop">Se connecter à son compte</h3>
+
+    <form action="/connexion" method="POST">
+
+        <label for="email-connection">Entrez votre adresse mail</label>
+        <input type="email" name="email" id="email-connection" value="alain-proviste@hotmail.fr">
+
+        <label for="password1">Entrez votre mot de passe</label>
+        <input type="password" name="password" id="password1" value="pass">
+
+        <input type="submit" value="Se connecter">
+
+
+
+    </form>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<%- include('partials/footer') %>

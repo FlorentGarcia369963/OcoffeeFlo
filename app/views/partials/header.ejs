@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <title>Ocoffe, La boutique qui sélectionne les meilleurs cafés</title>
+</head>
+
+<body class="main-background">
+    <div class="body">
+
+        <header class="header">
+            <div class="header-image-title-container">
+                <img class="header-image" src="/images/logo.svg" alt="Logo de Ocoffee">
+                <!-- <a class="header-clickable-logo" href="/"></a> -->
+            </div>
+
+            <nav class="header-nav">
+                <h1 class="header-title">Ocoffee</h1>
+
+
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul class="header-menu-burger-list hidden">
+                        <% if(user){ %>
+                            <p> Bienvenue
+                                <%= user.firstname %>
+                                    <%= user.lastname %>
+                            </p>                           
+                             <form action="/deconnexion" method="POST">
+                                <input type="submit" value="Se déconnecter">
+                            </form>
+                                <% } %>
+                                    <li class="header-nav-link-container">
+                                        <a class="header-nav-link" href="/">Accueil</a>
+                                    </li>
+                                    <li class="header-nav-link-container">
+                                        <a class="header-nav-link" href="/catalogue">Catalogue</a>
+                                    </li>
+                                    
+                                    <li class="header-nav-link-container">
+                                        <a class="header-nav-link" href="/boutique">Boutique</a>
+                                    </li>
+                                    
+                                    <%if(user){%>
+                                    <li class="header-nav-link-container">
+                                        <a class="header-nav-link" href="/bookmark">Favoris</a>
+                                    </li>
+                                    <%}%>
+                                    <li class="header-nav-link-container">
+                                        <a class="header-nav-link" href="/cart">Panier</a>
+                                    </li>
+                                    <li class="header-nav-link-container">
+                                        <a class="header-nav-link" href="/accountPage">Compte</a>
+                                    </li>
+                    </ul>
+                </div>
+
+                <ul class="header-menu-list main-menu">
+
+                    <li class="header-nav-link-container">
+                        <a class="header-nav-link" href="/">Accueil</a>
+                    </li>
+                    <li class="header-nav-link-container">
+                        <a class="header-nav-link" href="/catalogue">Catalogue</a>
+                    </li>
+                    <li class="header-nav-link-container">
+                        <a class="header-nav-link" href="/boutique">Boutique</a>
+                    </li>
+                    <%if(user){%>
+                        <li class="header-nav-link-container">
+                            <a class="header-nav-link" href="/bookmark">Favoris</a>
+                        </li>
+                        <%}%>
+                    <li class="header-nav-link-container">
+                        <a class="header-nav-link" href="/cart">Panier</a>
+                    </li>
+                    <li class="header-nav-link-container">
+                        <a class="header-nav-link" href="/accountPage">Compte</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <section class="profile">
+                <% if(user){ %>
+                    <div class="userLogged">Bienvenue <%= user.firstname %>
+                            <%= user.lastname %>
+                            <form action="/deconnexion" method="POST">
+                            <input type="submit" value="Se déconnecter">
+                        </form>
+                        </div>
+                    <% }else{ %>
+                        <div class="userLogged">Bienvenue
+                            <form action="/connexion" method="POST">
+                                <label for="email"></label>
+                                <input type="text" name="email" id="email" placeholder="email">
+
+                                <label for="passwordHeader"></label>
+                                <input type="password" name="password" id="passwordHeader" placeholder="password">
+
+                                <input type="submit" value="Se connecter">
+                            </form>
+                        </div>
+                        <% } %>
+            </section>
+
+        </header>
+
+        <main class="main">

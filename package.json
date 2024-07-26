@@ -1,0 +1,26 @@
+{
+  "name": "s09-projet-mvc-fg369963",
+  "version": "1.0.0",
+  "description": "## Information du projet",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "initBDD":"psql -U ocoffee -d ocoffee",
+    "create": "psql -U ocoffee -d ocoffee -f data/create_db.sql",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "Flo",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.11",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "pg": "^8.12.0",
+    "session": "^0.1.0"
+  }
+}

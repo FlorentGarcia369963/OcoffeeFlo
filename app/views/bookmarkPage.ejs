@@ -1,0 +1,74 @@
+<%- include('partials/header') %>
+
+    <section class=" section-catalogue">
+
+        <div class="section-banner-image">
+
+            <h2 class="section-catalogue-title">Vos Cafés Favoris</h2>
+
+        </div>
+
+    </section>
+
+    <section class="main-section section-news">
+
+
+        <!-- <h2 class="section-news-title main-section-title">Nos cafés</h2> -->
+
+
+
+        <div class="section-news-cards">
+            <div class="shadow-blur--catalogue"></div>
+            <div class="article-container">
+
+                <% console.log(coffees); 
+
+                    if(coffees === null || coffees === undefined || coffees.length === 0){%>
+                    <p>Il n'y a rien dans vos favoris pour l'instant</p>
+               <% }else{%>
+
+                   <% coffees.forEach(coffee => {
+                    console.log('log du coffee sur la vue');
+                    console.log(coffee)%>
+                        
+                    
+                 
+                    <article class="card-article card-<%=coffee.item_id  %>">
+                        <header class="card-article-header card-article-part">
+                            <h3 class="card-article-title">
+                                <%= coffee.name %>
+                            </h3>
+                        </header>
+                        <main class="card-article-main card-article-part">
+                            <div class="article-image-container">
+                                <img class="card-article-main-image" src="/images/coffees/images_coffees/<%= coffee.name %>.jpg"
+                                    alt="Image de grains de café">
+                            </div>
+                            <p class="card-article-text-description card-article-text">
+                                <%= coffee.description %>
+                            </p>
+                            <p class="card-article-text-origin card-article-text">Origine : <%= coffee.origin_name %>
+                            </p>
+                            <p class="card-article-text-caracteristic card-article-text">Caractéristique principale :
+                                <%= coffee.category_name %>
+                            </p>
+                        </main>
+                        <footer class="card-article-footer card-article-part">
+                            <div class="card-article-unlike" id="<%=coffee.item_id%>"></div>
+                            <a class="card-article-link" href="/pageProduit/<%= coffee.item_id %>">Découvrir</a>
+                            <a class="card-article-add-to-cart" href="/addToCart/<%=coffee.item_id%>"></a>
+
+                        </footer>
+                    </article>
+                    <%})}; %>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <%- include('partials/footer') %>

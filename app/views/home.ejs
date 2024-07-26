@@ -1,0 +1,81 @@
+<%- include('partials/header') %>
+
+    
+
+    <section class="section-presentation">
+
+
+        <div class="section-presentation-card">
+            <div class="shadow"></div>
+
+            <h2 class="card-title main-section-title">Ocoffee</h2>
+            <h3 class="card-subtitle">Qui sommes nous?</h3>
+            <p class="card-text">
+                Jean et Jacques Pepper, deux frères passionnés par le café, sont les fondateurs de notre
+                boutique. Avec une expertise approfondie et un amour profond pour cette délicieuse boisson, ils
+                ont créé un espace où le café est célébré comme une expérience raffinée et inspirante.
+            </p>
+
+
+            <a class="card-link" href="/catalogue">Voir le catalogue</a>
+
+        </div>
+
+        <div class="section-presentation-image">
+
+            <img class="image index-image" src="/images/about.jpg" alt="Image qui donne envie de café">
+
+        </div>
+
+    </section>
+
+    <section class="main-section section-news">
+
+        <h2 class="section-news-title main-section-title">Les Nouveautés</h2>
+
+        <div class="section-news-cards">
+            <div class="shadow-blur"></div>
+
+            <% let counter=0 %>
+                <% coffees.forEach((coffee)=> {
+                    ++ counter;
+                    %>
+
+                    <article class="card-article card-<%=counter %>">
+
+                        <header class="card-article-header card-article-part">
+                            <h3 class="card-article-title">
+                                <%= coffee.name %>
+                            </h3>
+                        </header>
+
+                        <main class="card-article-main card-article-part">
+                            <div class="article-image-container">
+                                <img class="card-article-main-image" src="/images/coffees/images_coffees/<%= coffee.name %>.jpg"
+                                    alt="Image de grains de café">
+                            </div>
+                            <p class="card-article-text-description card-article-text">
+                                <%= coffee.description %>
+                            </p>
+                            <p class="card-article-text-origin card-article-text">Origine :<%= coffee.origin_name %>
+                            </p>
+                            <p class="card-article-text-caracteristic card-article-text">Caractéristique principale :
+                                <%= coffee.origin_name %>
+                            </p>
+                        </main>
+
+                        <footer class="card-article-footer card-article-part">
+                            <div class="card-article-like" id="<%=coffee.id%>"></div>
+                            <a class="card-article-link" href="/pageProduit/<%= coffee.id %>">Découvrir</a>
+                            <div class="card-article-add-to-cart" id='<%=coffee.id%>'></div>                        </footer>
+
+                    </article>
+                    <% }); %>
+
+
+
+        </div>
+
+    </section>
+
+    <%- include('partials/footer') %>
