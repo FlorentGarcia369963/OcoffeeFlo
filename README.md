@@ -12,14 +12,6 @@ Quelques fetch permettent de gérer l'affichage des cafés et le tri par catégo
 
 J'ai continué ce projet quelques jours après, mais de manière à ne pas prendre trop de retard sur les nouvelles notions, je n'ai pas géré toutes les fonctionnalités que j'aurais voulu, notamment l'apparition de notifications en cas de connexion/déconnexion, ajout ou retrait des favoris ou du panier. 
 
-## Installation
-
-- créer le .env
-- npm install
-- initialiser la bdd 'npm run dev create' mot de passe: ocoffee
-- démarrer serveur: npm run dev
-- visionner sur port 3000
-
 ## Quelques critiques
 
 - Le design est gros et il serait bon de le réduire.
